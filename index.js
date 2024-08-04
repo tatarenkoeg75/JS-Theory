@@ -1,13 +1,26 @@
 /**
- * https://learn.javascript.ru/nullish-operators
+ * https://learn.javascript.ru/string
  */
 
-let width = null;
-// width = 0;
-console.log( `Width: ${width ?? 30}vmax` );
+//? Tab
+console.log("String \tTab noTab");
 
-let height = null;
-// height = 0;
-height ??= 10;
-console.log( `Width: ${height}vmax` );
+
+//? First Upper case
+const upperFirst = str => str && typeof(str) === 'string' 
+  ? str[0].toUpperCase() + str.slice(1)
+  : str;
+console.log( upperFirst('qwas') );
+console.log( upperFirst(1) );
+
+
+//? Truncating
+const truncate = (str, maxLength) => str && typeof(str) === 'string' && str.length > maxLength
+  ? `${str.slice(0, maxLength-1)}…`
+  : str;
+console.log( truncate('This string will be trancated', 10) );
+console.log( truncate('This string will be trancated', 10).length );
+console.log( truncate(1, 10) );
+console.log( truncate('', 10) );
+
 
